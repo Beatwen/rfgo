@@ -1,0 +1,424 @@
+/* reset */
+html, body, header, nav, footer, main, section, div, span, h1, h2, h3, h4, h5, h6, p, a, figure, figcaption, picture, img, ul, li, dl, dt, dd, form, label, input, textarea, button, svg, strong, b, address, time, table, caption, thead, tbody, th, td, tr
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+footer {
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    height: 2.5rem; 
+    z-index: 2;      
+}
+a
+{
+	display: inline-block;
+}
+ul
+{
+	list-style: none;
+}
+:root
+{
+    /* couleurs */
+    --couleur-froid: rgb(195, 201, 225);
+    --blackish-color: rgb(40, 33, 42);
+    --couleur-alert: rgb(159, 52, 52);
+    --couleur-succes: green;
+
+    /* espaces */
+    --espace-xxl: 5rem;
+    --espace-s: 0.6rem;
+    --espace-xs: 0.05rem;
+}
+/* base */
+html
+{
+    overflow-x: hidden;
+	font-size: clamp(16px, 1vw, 1vw);
+    font-family: Arial, Helvetica, sans-serif;
+}
+body
+{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(188, 188, 188);
+    text-align: center;
+}
+
+main
+{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+}
+.startDiv
+{
+    background: linear-gradient(to bottom, #d1d1d1 0%, #a6a6a6 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+ul, ol, h1, h2, h3, p
+{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+h1,h2 {
+    text-align: center;
+}
+p:not(:last-of-type)
+{
+    margin-bottom: 1rem;
+}
+ul li
+{
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+button, .btn
+{
+    padding: var(--espace-xs);
+    border-radius: 8rem;
+    font-size: 0.8rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    background-color: var(--couleur-chaud);
+}
+button:hover, .btn:hover
+{
+    cursor: pointer;
+}
+.btn-alert
+{
+    background-color: var(--couleur-alert);
+}
+.alert
+{
+    color: var(--couleur-alert);
+}
+.succes
+{
+    color: var(--couleur-succes);
+}
+/* header */
+header
+{
+    padding: var(--espace-xs) var(--espace-xxl);
+    background-color: var(--blackish-color);
+    color: white;
+}
+header nav 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding : 0 0.1em;
+    
+}
+header nav ul
+{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+header nav li:not(:last-of-type)
+{
+    margin-right: 2rem;
+}
+nav .fixed-right {
+    display: flex;
+    align-items: center;
+    gap: 3em;
+    margin-left: auto;
+}
+header nav a
+{
+    text-decoration: none;
+    color: white;
+}
+.active
+{
+    font-weight: bold;
+}
+footer
+{
+    color:white;
+    padding: var(--espace-xs) var(--espace-xxl);
+    display: flex;
+    background-color: var(--blackish-color);
+}
+/* formulaires */
+.mainBlock
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    padding: var(--espace-xxl);
+}
+input[type=text], select, textarea {
+    padding: 12px 20px;
+    border: 1px solid #8c8c8e;
+    background: #fff;
+    font-size: .875rem;
+    line-height: 1.5rem;
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+}
+form
+{
+    max-width: 500px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+form > p:first-of-type
+{
+    text-align: right;
+}
+form > p:first-of-type > span
+{
+    color: var(--couleur-alert);
+}
+form div
+{
+    margin-bottom: 0.5rem;
+}
+form div:last-of-type
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+form label
+{
+    margin-bottom: 0.2rem;
+    display: block;
+}
+form label.required::after
+{
+    content: '*';
+    color: var(--couleur-alert)
+}
+form input, form textarea
+{
+    padding: 0.3rem;
+    border: 1px solid var(--couleur-froid);
+    border-radius: 0.5rem;
+    width: 100%;
+}
+form textarea
+{
+    resize: vertical;
+    min-height: 150px;
+}
+form p.alert, form p.succes
+{
+    font-size: 0.8em;
+}
+.user-row
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.user-row a
+{
+    margin-left: auto;
+}
+.user-row button
+{
+    margin-left: 1em;
+}
+input.invalid {
+    border-color: red;
+    border-width : 2px;
+}
+input.valid {
+    border-color: green;
+    border-width : 2px;
+}
+/* Style for larger screens */
+@media (min-width: 768px) {
+    #menu {
+        display: flex;
+        justify-content: space-around;
+    }
+    #menuToggle {
+        display: none;
+    }
+}
+
+
+button
+{
+    margin: 10px;
+    pointer-events: all;
+    border: 2px solid var(--couleur-blanc);
+    border-radius: 50%;
+    background-color: var(--couleur-chaud);
+    box-shadow: 0 2px 4px rgb(2, 3, 34);
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+}
+#prev img, #prev1 img {
+    transform: rotate(180deg);
+}
+.carousel-btn-direction {
+    width: 50px; /* Adjust based on desired button size */
+    height: 50px; /* Adjust based on desired button size */
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensures items fill the height */
+    width: 100%;
+    height: 100%;
+}
+.carousel-conteneur {
+    position: relative; 
+    overflow: hidden; 
+    width: 100%; 
+    height: auto; 
+}
+
+.carousel-item {
+    position: absolute; 
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    opacity: 0; 
+    transition: opacity 1s ease-in-out; 
+}
+.carousel-item.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel-conteneur, .titleDiv {
+    flex: 0 1 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.carousel-conteneur > .carousel-item, .titleDiv {
+    width: 100%; 
+    margin: 0 auto;
+}
+.carousel-item {
+    width: 100%; /* Adjust based on your layout */
+    height: 100%; /* Example height, adjust as needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Avoids repeating the image */
+}
+
+/* menu hamburger */
+.active > span:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+}
+.active > span:nth-child(2) {
+    opacity: 0;
+}
+.active > span:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+}
+.btnMenu {
+    box-shadow: none;
+}
+  /* Style pour les petits écrans */
+@media (max-width: 767px) {
+    header{
+        padding: var(--espace-s);
+    }
+    nav, footer {
+        padding : var(--espace-s);
+    }
+    #menu {
+        display: none;
+    }
+    #menuToggle span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        justify-content: center;
+        background: #cdcdcd;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    opacity 0.55s ease;
+    }
+    #menuToggle {
+        display: block;
+    }
+    .display {
+        display: flex !important;
+        flex-direction: column;
+        width: 30%;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    .titleDiv {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    li {
+        text-align: center;
+    }
+    a {
+        text-align: center;
+    } 
+    .ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+    #userName {
+        display: none;
+    }
+
+    
+}
+
