@@ -9,11 +9,10 @@ const toggleBtnFunc = (e) => {
 
 btn.addEventListener('click', toggleBtnFunc);
 
-// Gestion du carousel
 import {Carousel} from '/rfgo/public/ressources/js/modules/carousel.js';
 
 const carouselCallback = (event) => {
-    Carousel(event);
+    Carousel.initializeCarousel(event);
 }
 
 //Ajout des fonctions sur les flèches du Carousel
