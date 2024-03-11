@@ -72,8 +72,12 @@ class ConnexionController
                         $_SESSION['csrf_token'] = CSRFToken::generateCSRFToken();
                         $cookieToken = bin2hex(random_bytes(32));
                         $pdo = ConnexionModel::callDataBase();
-                        $_POST['rememberMe'] ? ConnexionModel::rememberme($pseudo, $cookieToken, $pdo) : ConnexionModel::donotrememberme($pseudo, $pdo,$cookieToken);
-                        header("Location: " . BASE_URL . '/');
+                        if(isset($_POST['rememberMe'])) {
+                            ConnexionModel::rememberme($pseudo, $cookieToken, $pdo);
+                        } else {
+                            ConnexionModel::donotrememberme($pseudo, $pdo, $cookieToken);
+                        }
+                                                header("Location: " . BASE_URL . '/');
                         exit();
                     }
             }

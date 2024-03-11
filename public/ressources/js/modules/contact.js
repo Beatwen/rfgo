@@ -54,10 +54,9 @@ async function submit(requeteUrl, form)
 
         const submitButton = form.querySelector('button[type="submit"]');
         const messageElement = document.createElement('p');
-        console.log(data.message);
         messageElement.innerHTML = data.message;
     
-        // Insert the message element before the submit button
+        // insertion du message d'erreur près de son champ
         submitButton.parentNode.insertBefore(messageElement, submitButton);
     }
     catch(e)

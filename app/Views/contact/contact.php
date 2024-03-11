@@ -22,5 +22,5 @@
             <button type="submit">Submit</button>
         </form>
     </div>  
-    <div id="images"></div>
+    <div id="images"></div> 
     

@@ -10,10 +10,9 @@
         <input type="password" name="password" minlength="8" maxlength="72">
         <span style="color: red"><?= $passwordError ?? '' ?></span>
         <label for="rememberMe">Remember Me</label>
-        <input type="checkbox" name="rememberMe" placeholder="Remember Me" value="rememberMe">
+        <input type="checkbox" name="rememberMe" value="true">
         <button type="submit">Submit</button>
     </form>
 </div>
-
 <a href='signin'>Create an account here</a>
 

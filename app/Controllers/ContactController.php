@@ -45,7 +45,6 @@ class ContactController
             $resultat = GestionFormulaire::verifier_validiteChamps(ContactModel::obtenir_champsConfig(), $_POST);
             if (count($resultat['erreurs']) === 0) {
                 $resultat['messageValidation'] = GestionMessage::obtenir_messageValidation('form', 'envoi_succes');
-                ECHO $_POST['email'] . $_POST['message'] . $_POST['firstname'] . $_POST['lastname']. 'test';
                 GestionMessage::sendEmail($_POST['email'], $_POST['message'], $_POST['firstname'], $_POST['lastname']);
             } else {
                 $resultat['messageValidation'] = GestionMessage::obtenir_messageValidation('form', 'champs_echec', false);

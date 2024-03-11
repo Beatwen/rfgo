@@ -49,7 +49,6 @@ class GestionMessage
     }
     public static function sendEmail($email, $message, $firstname, $lastname)
     {
-        echo $email . $message . $firstname . $lastname. 'test';
         $expediteur = "$firstname $lastname <$email>";
         $destinataire = "christophe.bouserez@gmail.com";
         $reponse = "reponse@exemple.com";
@@ -70,7 +69,6 @@ class GestionMessage
             $message = ob_get_clean();
         if (mail($destinataire, $sujet, $message, $entete))
         {
-            echo "Le courriel a été envoyé avec succès.";
         }
         else
         {
